@@ -1,0 +1,193 @@
+const jCategory=[
+    {
+        index:0,
+        image:"../images/google.png",
+        title:"Web Developer",
+        rate:'$900-1200/m',
+        av:"Full Time",
+        companyName:"Google",
+        location:"USA",
+        vacancy:"01",
+        hours:"50h /Week",
+        description:"Google is a global technology leader known for its innovation in search, cloud computing, artificial intelligence, and software development. Working at Google means joining a dynamic and collaborative environment where employees tackle complex challenges and develop cutting-edge solutions. Depending on the role, responsibilities may include software engineering, data analysis, product management, UX design, marketing, or technical support. Google values creativity, problem-solving skills, and a strong passion for technology. Employees enjoy a culture of learning, competitive benefits, and access to world-class resources. Whether working on AI advancements, cloud platforms, or consumer products, a career at Google offers opportunities for growth and impact on a global scale",
+        workplace:"Work From Home",
+        education:"Bachelor degree in any Computer Science Course.",
+        experience:"2 to 5 years(s)",
+        KeySkills:"HTML, CSS, JavaScript, React.js, Node.js, Python, SQL, API Integration, Git, Web Security, Google Cloud",
+        rating: 4.8,
+        reviews: [
+            { user: "John Doe", comment: "Great work environment!", stars: 5 },
+            { user: "Jane Smith", comment: "Excellent team collaboration.", stars: 4.5 },
+            { user: "Mike Lee", comment: "Amazing learning experience.", stars: 4.8 }
+        ]
+    },
+
+    {
+        index:1,
+        image:"../images/uber.png",
+        title:"Freelancer",
+        rate:'$900-1200/m',
+        av:"Freelancer",
+        companyName:"Uber",
+        location:"India",
+        vacancy:"04",
+        hours:"40h /Week",
+        description:" Uber is a global leader in ride-sharing and mobility services, offering innovative transportation solutions in cities worldwide. As a **Business Associate** at Uber, you will play a key role in analyzing market trends, optimizing operations, and supporting strategic initiatives to enhance business growth. This role involves working closely with cross-functional teams, conducting data-driven research, and developing insights to improve efficiency and customer experience. Strong problem-solving skills, analytical thinking, and the ability to work in a fast-paced environment are essential. Uber fosters a culture of innovation, collaboration, and professional development, providing employees with opportunities to grow their careers while making a significant impact on urban mobility.",
+        workplace:"Work From Home",
+        education:"Bachelor degree in any Computer Science Course.",
+        experience:"1 to 5 years(s)",
+        KeySkills:"Time Management, Communication, Problem-Solving, Customer Service, Navigation Skills, Basic Accounting,Digital Literacy, Self-Motivation.",
+        rating: 4.5,
+       reviews: [
+    { user: "Emily Carter", comment: "Flexible hours and great for part-time income.", stars: 4.7 },
+    { user: "David Nguyen", comment: "Good platform but customer behavior can be unpredictable.", stars: 3.8 },
+    { user: "Sophia Brown", comment: "Support team is responsive, but incentives vary by city.", stars: 4.2 },
+    { user: "Carlos Rivera", comment: "Great way to earn extra cash while studying.", stars: 4.6 },
+        ]
+    },
+
+    {
+        index:2,
+        image:"../images/linkedin.png",
+        title:"Business Associate",
+        rate:'$900-1200/m',
+        av:"Part Time",
+        companyName:"Linkedin",
+        location:"India",
+        vacancy:"05",
+        hours:"30h /Week",
+        description:" LinkedIn is the world's largest professional networking platform, connecting millions of professionals and businesses globally. As a **Marketing Specialist** at LinkedIn, you will be responsible for developing and executing marketing strategies to enhance brand visibility, engage users, and drive business growth. This role involves content creation, campaign management, data analysis, and collaboration with cross-functional teams to optimize digital marketing efforts. Strong communication skills, creativity, and a data-driven mindset are essential for success. LinkedIn offers a dynamic work environment that fosters innovation, career development, and networking opportunities, making it an ideal workplace for professionals looking to make a meaningful impact in the digital space.",
+        workplace:"Work From Office",
+        education:"Bachelor degree in any Computer Science Course.",
+        experience:"1 to 5 years(s)",
+        KeySkills:"Business Strategy, Market Research, Data Analysis, Communication, Sales, Client Management, Project Management, Team Collaboration.",
+        rating: 4.6,
+reviews: [
+    { user: "Arjun Mehta", comment: "Fantastic company culture with strong emphasis on innovation and collaboration.", stars: 4.8 },
+    { user: "Sneha Reddy", comment: "Supportive team environment and ample learning opportunities. Great for early-career professionals.", stars: 4.7 },
+    { user: "Ravi Sharma", comment: "Workload can be heavy at times, but management is generally understanding.", stars: 4.2 },
+    { user: "Pooja Nair", comment: "Excellent office facilities and strong focus on professional development.", stars: 4.9 },
+    { user: "Aditya Verma", comment: "Great exposure to global projects. Processes can be a bit rigid though.", stars: 4.5 }
+]
+
+    },
+    {
+        index:3,
+        image:"../images/facebook.png",
+        title:"Digital Marketing",
+        rate:'$1200-1400/m',
+        av:"Full Time",
+        companyName:"Facebook",
+        location:"USA",
+        vacancy:"07",
+        hours:"70h /Week",
+        description:"A job at **Facebook (Meta)** offers exciting opportunities to work on cutting-edge technology that connects people worldwide. Whether you are a **Software Engineer, Product Manager, Data Analyst, or Marketing Specialist**, you will be part of a team that builds and improves platforms like Facebook, Instagram, and WhatsApp. Employees at Meta work on innovative projects, solve complex challenges, and develop new features that enhance user experience. The company values creativity, collaboration, and problem-solving, providing a supportive work culture, competitive salaries, and excellent benefits. Working at Facebook allows you to contribute to a global impact while growing in your career.",
+        workplace:"Work From Office",
+        education:"Bachelor degree in any Computer Science Course.",
+        experience:"1 to 5 years(s)",
+        KeySkills: "Digital Advertising, SEO/SEM, Social Media Marketing, Google Analytics, Campaign Management, Content Strategy, Data-Driven Marketing, Creative Thinking, A/B Testing, PPC, Marketing Automation",
+        rating: 4.7,
+        reviews: [
+    { user: "Jessica Lee", comment: "An incredible place to grow professionally with access to top-tier tools and mentorship.", stars: 4.9 },
+    { user: "Daniel Moore", comment: "Challenging workload but very rewarding. Amazing team culture.", stars: 4.6 },
+    { user: "Priya Kapoor", comment: "High-performance expectations, but lots of room for innovation.", stars: 4.5 },
+    { user: "Omar Rodriguez", comment: "Great benefits and exposure to global digital campaigns. Loved the collaboration.", stars: 4.8 },
+    { user: "Rachel Adams", comment: "Sometimes fast-paced to the point of being stressful, but the learning curve is unmatched.", stars: 4.7 }
+    ]
+ 
+    },
+    {
+        index:4,
+        image:"../images/yahoo.png",
+        title:"User Experience",
+        rate:'$800-1400/m',
+        av:"Part Time",
+        companyName:"Yahoo",
+        location:"USA",
+        vacancy:"05",
+        hours:"50h /Week",
+        description:"A User Experience (UX) Designer at Yahoo is responsible for researching user behavior, designing user-friendly interfaces, and ensuring seamless navigation across Yahoo’s digital platforms. The role involves collaborating with developers, product managers, and marketing teams to improve the design and functionality of Yahoo’s web and mobile applications. Creativity, problem-solving, and knowledge of UI/UX principles are essential for success in this role.",
+        workplace:"Work From Home",
+        education:"Bachelor degree in any Computer Science Course.",
+        experience:"2 to 5 years(s)",
+        KeySkills: "User Research, Wireframing, Prototyping, UX Design, UI Design, Figma, Adobe XD, Usability Testing, Interaction Design, Design Thinking, Responsive Design, Accessibility Standards",
+        rating: 4.5,
+        reviews: [
+    { user: "Meghan Riley", comment: "Flexible work hours and a solid team make it a comfortable and creative work environment.", stars: 4.6 },
+    { user: "Ankit Rawal", comment: "Great for honing UX skills with real product impact. Tools and resources are up-to-date.", stars: 4.5 },
+    { user: "Linda Wu", comment: "Collaborative culture and excellent feedback cycles. A little slow on decision-making though.", stars: 4.4 },
+        ]
+
+    },
+    {
+        index:5,
+        image:"../images/apple.png",
+        title:"Web Developer",
+        rate:'$1200-1600/m',
+        av:"Full Time",
+        companyName:"Apple",
+        location:"India",
+        vacancy:"02",
+        hours:"70h /Week",
+        description:"Apple Inc. is a global technology company known for its innovation, premium-quality products, and user-centric design. Founded in 1976, Apple has revolutionized industries with groundbreaking devices like the iPhone, MacBook, iPad, Apple Watch, and AirPods, as well as services such as iCloud, Apple Music, and the App Store. The company is committed to seamless integration of hardware, software, and services, ensuring a smooth and intuitive user experience. Apple is also a leader in privacy, security, and sustainability, consistently pushing the boundaries of technology while maintaining its focus on design and functionality.",
+        workplace:"Work From Office",
+        education:"Bachelor degree in Computer Science Course.",
+        experience:"2 to 4 years(s)",
+         KeySkills: "HTML, CSS, JavaScript, React, Node.js, REST APIs, Git, Web Performance Optimization, Responsive Design, Cross-Browser Compatibility, Agile Development, Security Best Practices",
+    rating: 4.8,
+    reviews: [
+        { user: "Ritika Sharma", comment: "Incredible tech stack and brilliant minds to work with. Learned so much in a short time.", stars: 4.9 },
+        { user: "Mohammed Faiz", comment: "The pace is fast but it's worth it. Apple encourages innovation at every level.", stars: 4.7 },
+        { user: "Tanvi Deshmukh", comment: "Great focus on clean code and performance. Deadlines can be tight though.", stars: 4.6 },
+        { user: "Karan Malhotra", comment: "Being a part of Apple’s dev team is a dream. The environment is high-energy and disciplined.", stars: 5.0 },
+        { user: "Snehal Patel", comment: "Expect high standards and top-notch teamwork. Career growth is well-supported.", stars: 4.8 }
+    ]
+    },
+    {
+        index:6,
+        image:"../images/instagram.png",
+        title:"Product Designer",
+        rate:'$1200-1600/m',
+        av:"Part Time",
+        companyName:"Instagram",
+        location:"USA",
+        vacancy:"02",
+        hours:"70h /Week",
+        description:"Instagram is a globally popular social media platform that focuses on photo and video sharing, allowing users to connect, express themselves, and engage with content through visuals. Launched in 2010 and later acquired by Meta (formerly Facebook), Instagram has evolved into a powerful tool for individuals, influencers, and businesses. With features like Stories, Reels, IGTV, and Shopping, the platform offers diverse ways to create and share content. It is widely used for branding, marketing, and community engagement, helping businesses and creators reach a broad audience. ",
+        workplace:"Work From Office",
+        education:"UG: B.Tech/B.E. in Production/Industrial",
+        experience:"2 to 5 years(s)",
+        KeySkills: "UI/UX Design, Wireframing, Prototyping, Figma, Sketch, User Research, Interaction Design, Visual Storytelling, Brand Identity, Accessibility, Mobile Design, Creative Direction",
+    rating: 4.6,
+    reviews: [
+        { user: "Elena Torres", comment: "Creative freedom is highly encouraged. Great place for designers to experiment and grow.", stars: 4.8 },
+        { user: "Markus Jensen", comment: "Fast-paced, visually driven environment. You'll always be working on something exciting.", stars: 4.7 },
+        { user: "Sanya Arora", comment: "Amazing design culture and team. Feedback cycles are constructive and helpful.", stars: 4.5 },
+        { user: "Daryl Scott", comment: "Can feel pressure to always innovate, but support from leadership is strong.", stars: 4.4 },
+        
+    ]
+    },
+    {
+        index:7,
+        image:"../images/wordpress.png",
+        title:"Freelancer",
+        rate:'$900-1200/m',
+        av:"Freelancer",
+        companyName:"Wordpress",
+        location:"India",
+        vacancy:"06",
+        hours:"50h /Week",
+        description:"WordPress is a leading content management system (CMS) that powers millions of websites worldwide, from personal blogs to major business platforms. Launched in 2003, it has grown into an open-source platform known for its flexibility, ease of use, and extensive customization options. With thousands of themes, plugins, and tools, WordPress allows users to create and manage websites without needing advanced coding skills. It supports e-commerce, SEO optimization, and multimedia content, making it a preferred choice for businesses, bloggers, and developers. ",
+        workplace:"Work From Home",
+        education:"UG: B.Tech/B.E. in Production/Industrial",
+        experience:"2 to 5 years(s)",
+        KeySkills: "WordPress Development, Theme Customization, Plugin Development, HTML, CSS, PHP, MySQL, WooCommerce, SEO Optimization, Website Maintenance, UI/UX Basics, Page Builders (Elementor/Divi)",
+    rating: 4.4,
+    reviews: [
+        { user: "Ramesh Gupta", comment: "Great platform for freelancing. Flexible schedule and plenty of opportunities to learn.", stars: 4.5 },
+        { user: "Kavita Sharma", comment: "Perfect for independent work. Projects vary widely which keeps it interesting.", stars: 4.4 },
+        { user: "Arif Khan", comment: "You need to be self-motivated, but the freedom is worth it. Decent client support.", stars: 4.3 },
+       
+    ]
+    },
+];

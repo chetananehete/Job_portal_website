@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JSTACK - Search Jobs</title>
+        <link rel="stylesheet" href="../style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    </head>
+    <style>
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #184d3a; /* Dark green */
+    z-index: 1000; /* Ensures it stays above content */
+    padding: 15px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add padding to the body to prevent overlap */
+body {
+    padding-top: 80px; /* Adjust based on navbar height */
+}
+
+
+        /* Job Details Container */
+#jobDetails {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Job Header */
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Company Image */
+.job-img-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Company Logo */
+.company-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.job-img-row img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Apply Button */
+#g-btn {
+    background: #3b826d;
+    color: white;
+    padding: 15px 25px; /* Increased padding */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+    display: block; /* Full width button */
+    max-width: 150px; /* Limit width on large screens */
+    width: 50%; /* Full width on small screens */
+}
+
+#g-btn:hover {
+    background: #2f6b59;
+}
+
+
+#g-btn:hover {
+    background: #2f6b59;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.fe-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.fe-box div {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.fe-box img {
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+.fe-box h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Job Description */
+.job-description {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-description h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.job-description p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+    }
+
+    .fe-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-img-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #g-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+      /* Reviews Section Styling */
+.job-reviews {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.rating {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.reviews {
+    border-top: 2px solid #ddd;
+    padding-top: 15px;
+}
+
+.review-item {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.review-item h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.review-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.review-item span {
+    font-weight: bold;
+    color: #f39c12;
+    font-size: 14px;
+}
+
+/* Remove unnecessary spaces */
+.reviews > .review-item:last-child {
+    margin-bottom: 0;
+}
+
+    </style>
+
+    <body>
+
+        <!-- Header  Section-->
+         <header>
+            <div id="navbar" class="obj-width">
+                <a href="../index.html"><img class="logo" src ="../images/logo.png" alt=""></a>
+                <ul id="menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../jobs/job.html">Browse Jobs</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <button id="w-btn">Join</button>
+                </ul>
+
+                <i id="bar" class='bx bx-menu'></i>
+            </div>
+         </header>
+
+         <div id="jobDetails" class="extra-space obj-width">
+         </div>
+
+         <!-- <div id="companyReviews" class="extra-space obj-width">
+            <h3>Company Reviews & Ratings</h3>
+            <div id="reviewSection"></div>
+         </div> -->
+
+        <!-- Footer  Section-->
+         <footer class="footer">
+            <div class="obj-width">
+                <div class="top">
+                    <div>
+                        <img class="logo" src="../images/logo.png" alt="">
+                        <p>Search your desired jobs.</p>
+                    </div>
+                    <div>
+                        <a href="#"><i class='bx bxl-facebook-square'></i></a>
+                        <a href="#"><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div>
+                        <h3>Project</h3>
+                        <a href="#">Changelog</a>
+                        <a href="#">Status</a>
+                        <a href="#">Licence</a>
+                        <a href="#">All Version</a>
+                    </div>
+
+                    <div>
+                        <h3>Commnunity</h3>
+                        <a href="#">GitHub</a>
+                        <a href="#">Issues</a>
+                        <a href="#">Project</a>
+                        <a href="#">Twitter</a>
+                    </div>
+
+                    <div>
+                        <h3>Help</h3>
+                        <a href="#">Support</a>
+                        <a href="#">Troubleshooting</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+
+                    <div>
+                        <h3>Others</h3>
+                        <a href="#">Terms Of Services</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Licence</a>
+                        <a href="#">All Version</a>
+                    </div>
+                </div>
+            </div>
+         </footer>
+
+         <script>
+            document.addEventListener("DOMContentLoaded", () => {
+    const urlParam = new URLSearchParams(window.location.search);
+    const index = urlParam.get("id");
+
+    // Validate index
+    if (index === null || isNaN(index) || index >= jCategory.length) {
+        console.error("Invalid job ID");
+        return;
+    }
+
+    const selectJob = jCategory[index];
+
+    // Get job details container
+    const jobDetailsContainer = document.getElementById("jobDetails");
+
+    // Inject job details
+    jobDetailsContainer.innerHTML = `
+        <div class="job-header">
+            <div class="job-img-row">
+                <img src=${selectJob.image} alt=""/>
+                <div>
+                    <h2>${selectJob.companyName}</h2>
+                    <span>${selectJob.location}</span>
+                </div>
+            </div>
+            <a id="g-btn" href="apply.html?id=${index}">Apply Now</a>
+        </div>
+
+        <div class="features obj-width">
+            <div class="fe-box">
+                <div>
+                    <img src="../images/vacancy.png" alt="">
+                    <h3>Vacancy</h3>
+                    <p>${selectJob.vacancy}</p>
+                </div>
+                <div>
+                    <img src="../images/fe 1.png" alt="">
+                    <h3>Position</h3>
+                    <p>${selectJob.title}</p>
+                </div>
+                <div>
+                    <img src="../images/hour.png" alt="">
+                    <h3>Hours</h3>
+                    <p>${selectJob.hours}</p>
+                </div>
+                <div>
+                    <img src="../images/salary.png" alt="">
+                    <h3>Salary</h3>
+                    <p>${selectJob.rate}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="job-description sec-space">
+            <h3>Job Description</h3>
+            <p>${selectJob.description}</p>
+
+            <h3>✅Employment Status</h3>
+            <p>${selectJob.av}</p>
+
+            <h3>🏢Workplace</h3>
+            <p>${selectJob.workplace}</p>
+
+            <h3>🎓Educational Requirements</h3>
+            <p>${selectJob.education}</p>
+
+            <h3>💼Experience Requirements</h3>
+            <p>${selectJob.experience}</p>
+
+            <h3>Skills Requirements</h3>
+            <p>${selectJob.KeySkills}</p>
+        </div>
+        
+        <!-- Review Section -->
+        <div class="job-reviews sec-space">
+            <h3>Job Ratings & Reviews</h3>
+            <div id="reviewSection"></div>
+        </div>
+    `;
+
+    // Function to display reviews
+    function displayReviews(job) {
+        const reviewSection = document.getElementById("reviewSection");
+
+        if (!job.reviews || job.reviews.length === 0) {
+            reviewSection.innerHTML = `<p>No reviews yet. Be the first to review!</p>`;
+            return;
+        }
+
+        const reviewsHTML = job.reviews.map(review => `
+            <div class="review-item">
+                <h4>${review.user}</h4>
+                <p>${review.comment}</p>
+                <span>${review.stars} ★</span>
+            </div>
+        `).join('');
+
+        reviewSection.innerHTML = `
+            <div class="rating">
+                <h3>Average Rating: ${job.rating} ★</h3>
+                <p>${job.reviews.length} Reviews</p>
+            </div>
+            <div class="reviews">
+                ${reviewsHTML}
+            </div>
+        `;
+    }
+
+    // Display reviews for the selected job
+    displayReviews(selectJob);
+});
+
+         </script>
+
+        <script src="job-list.js"></script>
+        <script src="../toggle.js"></script>
+        <script src="script.js"></script>
+        <script src="jobsearch.js"></script>
+    </body>
+
+</html>

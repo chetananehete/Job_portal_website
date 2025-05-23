@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Job</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, button, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #successMessage {
+            display: none;
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Apply for Job</h2>
+        <div id="jobDetails"></div>
+
+        <!-- <form id="jobApplicationForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required>
+
+            <label for="linkedin">LinkedIn Profile:</label>
+            <input type="url" id="linkedin">
+
+            <label for="github">GitHub Profile:</label>
+            <input type="url" id="github">
+
+            <label for="skills">Key Skills:</label>
+            <textarea id="skills" rows="2" required></textarea>
+
+            <label for="experience">Work Experience (in years):</label>
+            <input type="number" id="experience" required>
+
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume" required>
+
+            <button type="submit">Submit Application</button>
+        </form> -->
+        <form id="jobApplicationForm" method="POST" action="https://api.web3forms.com/submit">
+    <input type="hidden" name="access_key" value="3be7d99e-41a1-40fe-a416-61a62732f95b">
+
+    <label for="name">Full Name:</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" name="phone" id="phone" required>
+
+    <label for="linkedin">LinkedIn Profile:</label>
+    <input type="url" name="linkedin" id="linkedin">
+
+    <label for="github">GitHub Profile:</label>
+    <input type="url" name="github" id="github">
+
+    <label for="skills">Key Skills:</label>
+    <textarea name="skills" id="skills" rows="2" required></textarea>
+
+    <label for="experience">Work Experience (in years):</label>
+    <input type="number" name="experience" id="experience" required>
+
+    <!-- <label for="resume">Resume Link (Google Drive/Dropbox):</label>
+    <input type="url" name="resume" id="resume" required> -->
+
+    <label for="resumeFile">Upload Resume:</label>
+    <input type="file" id="resumeFile" name="resumeFile" accept=".pdf,.doc,.docx" required />
+
+    <!-- This will be filled by JS after uploading to file.io -->
+    <input type="hidden" name="resume_link" id="resumeLink" />
+
+    <input type="submit" value="Submit Application">
+</form>
+
+
+
+
+        <p id="successMessage">✅ Your application has been submitted successfully!</p>
+    </div>
+
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const jobId = urlParams.get("id");
+
+            // // Sample Job List (Replace with real data from a database or API)
+            // const jobs = [
+            //     { companyName: "Google", location: "USA", title: "Software Engineer" },
+            //     { companyName: "Microsoft", location: "UK", title: "Data Scientist" },
+            //     { companyName: "Amazon", location: "Canada", title: "Cloud Engineer" }
+            // ];
+
+            // Fetch Job Details
+            if (jobId !== null && jobs[jobId]) {
+                const selectedJob = jobs[jobId];
+                document.getElementById("jobDetails").innerHTML = `
+                    <h3>Company: ${selectedJob.companyName}</h3>
+                    <p>Location: ${selectedJob.location}</p>
+                    <p>Position: ${selectedJob.title}</p>
+                `;
+            }
+
+            // Form Submission Handling
+            document.getElementById("jobApplicationForm").addEventListener("submit", async (event) => {
+                event.preventDefault(); // Prevent page reload
+
+                // Collect form data
+                const formData = new FormData();
+                formData.append("name", document.getElementById("name").value);
+                formData.append("email", document.getElementById("email").value);
+                formData.append("phone", document.getElementById("phone").value);
+                formData.append("linkedin", document.getElementById("linkedin").value);
+                formData.append("github", document.getElementById("github").value);
+                formData.append("skills", document.getElementById("skills").value);
+                formData.append("experience", document.getElementById("experience").value);
+                formData.append("resume", document.getElementById("resume").files[0]);
+
+                console.log("Application Submitted:", Object.fromEntries(formData));
+
+                // Fake API request (Replace with real API endpoint)
+                try {
+                    // Simulate sending data to a server
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+
+                    // Show success message
+                    document.getElementById("successMessage").style.display = "block";
+
+                    // Clear form after submission
+                    document.getElementById("jobApplicationForm").reset();
+                } catch (error) {
+                    console.error("Error submitting application:", error);
+                }
+            });
+        });
+    </script> -->
+<!-- <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const jobId = urlParams.get("id");
+
+    // Sample Job Data
+    // const jobs = [
+    //     { companyName: "Google", location: "USA", title: "Software Engineer" },
+    //     { companyName: "Microsoft", location: "UK", title: "Data Scientist" },
+    //     { companyName: "Amazon", location: "Canada", title: "Cloud Engineer" }
+    // ];
+
+    if (jobId !== null && jobs[jobId]) {
+        const selectedJob = jobs[jobId];
+        document.getElementById("jobDetails").innerHTML = `
+            <h3>Company: ${selectedJob.companyName}</h3>
+            <p>Location: ${selectedJob.location}</p>
+            <p>Position: ${selectedJob.title}</p>
+        `;
+    }
+
+    // Handle Job Application Form Submit (Web3Forms)
+    const form = document.getElementById("jobApplicationForm");
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        // Optional: Add job info
+        formData.append("Job Title", jobs[jobId]?.title || "Unknown");
+        formData.append("Company", jobs[jobId]?.companyName || "Unknown");
+
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        }).then(response => {
+            if (response.ok) {
+                document.getElementById("successMessage").style.display = "block";
+                form.reset();
+            } else {
+                alert("❌ Submission failed.");
+            }
+        }).catch(error => {
+            console.error("Error:", error);
+            alert("❌ Network error.");
+        });
+    });
+});
+</script> -->/
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const jobId = urlParams.get("id");
+
+    // // Sample job data (replace with dynamic data if needed)
+    // const jobs = [
+    //     { companyName: "Google", location: "USA", title: "Software Engineer" },
+    //     { companyName: "Microsoft", location: "UK", title: "Data Scientist" },
+    //     { companyName: "Amazon", location: "Canada", title: "Cloud Engineer" }
+    // ];
+
+    if (jobId !== null && jobs[jobId]) {
+        const selectedJob = jobs[jobId];
+        document.getElementById("jobDetails").innerHTML = `
+            <h3>Company: ${selectedJob.companyName}</h3>
+            <p>Location: ${selectedJob.location}</p>
+            <p>Position: ${selectedJob.title}</p>
+        `;
+    }
+
+    const form = document.getElementById("jobApplicationForm");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const resumeFile = document.getElementById("resumeFile").files[0];
+
+        if (!resumeFile) {
+            alert("Please upload your resume.");
+            return;
+        }
+
+        // Step 1: Upload file to file.io
+        const fileData = new FormData();
+        fileData.append("file", resumeFile);
+
+        let resumeLink = "";
+
+        try {
+            const uploadRes = await fetch("https://file.io", {
+                method: "POST",
+                body: fileData
+            });
+
+            const uploadJson = await uploadRes.json();
+
+            if (uploadJson.success) {
+                resumeLink = uploadJson.link;
+            } else {
+                alert("❌ Resume upload failed.");
+                return;
+            }
+        } catch (error) {
+            console.error("Upload error:", error);
+            alert("❌ Network error while uploading resume.");
+            return;
+        }
+
+        // Step 2: Submit form to Web3Forms
+        const formData = new FormData(form);
+        formData.append("resume_link", resumeLink);
+        formData.append("Job Title", jobs[jobId]?.title || "Unknown");
+        formData.append("Company", jobs[jobId]?.companyName || "Unknown");
+
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            if (res.ok) {
+                document.getElementById("successMessage").style.display = "block";
+                form.reset();
+            } else {
+                alert("❌ Submission failed.");
+            }
+        } catch (err) {
+            console.error("Web3Forms error:", err);
+            alert("❌ Submission error.");
+        }
+    });
+});
+</script>
+
+
+
+</body>
+</html>
